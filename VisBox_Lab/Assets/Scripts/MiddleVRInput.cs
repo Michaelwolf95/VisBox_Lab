@@ -3,6 +3,10 @@ using System.Collections;
 
 public static class MiddleVRInput
 {
+    public static bool GetButton(int buttonIndex)
+    {
+        return GetButton((uint)buttonIndex);
+    }
     public static bool GetButton(uint buttonIndex)
     {
         vrButtons wandButtons = MiddleVR.VRDeviceMgr.GetWandButtons();
@@ -26,6 +30,11 @@ public static class MiddleVRInput
         return false;
     }
 
+    public static bool GetButtonDown(int buttonIndex)
+    {
+        return GetButtonDown((uint)buttonIndex);
+    }
+
     public static bool GetButtonDown(uint buttonIndex)
     {
         vrButtons wandButtons = MiddleVR.VRDeviceMgr.GetWandButtons();
@@ -47,6 +56,10 @@ public static class MiddleVRInput
                 return wandButtons._IsToggledPressed(MiddleVR.VRDeviceMgr.GetWandButton5());
         }
         return false;
+    }
+    public static bool GetButtonUp(int buttonIndex)
+    {
+        return GetButtonUp((uint)buttonIndex);
     }
     public static bool GetButtonUp(uint buttonIndex)
     {
